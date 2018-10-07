@@ -1,0 +1,16 @@
+.jumbotron {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.display-4 {
+    font-weight: 600;
+}
+.card {
+    margin: auto;
+}
+
+#pick {
+    font-style: italic;
+}

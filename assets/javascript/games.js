@@ -1,6 +1,8 @@
 //variables
 var wins = 0;
+console.log(wins);
 var losses = 0;
+console.log(losses);
 var guessesRemain = 8;
 var secretLetter = "";
 var guesses = [];
@@ -23,12 +25,12 @@ document.onkeyup = function(event) {
     guesses.push(" " + userGuess);
     console.log(guesses);
 
-//if correct guess, you win and evverything resets...if you don't get the correct guess, the remaining guesses go down by one
-    if (userGuess == secretLetter) {
+//if correct guess, you win and everything resets...if you don't get the correct guess, the remaining guesses go down by one
+    if (userGuess === secretLetter) {
         wins++;
         guessesRemain = 8;
         guesses = [];
-        secretLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        var secretLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
     } else {
         guessesRemain--;
     } 
@@ -38,12 +40,13 @@ document.onkeyup = function(event) {
         losses++;
         guessesRemain = 8;
         guesses = [];
-        secretLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+        var secretLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
+
 //update wins, losses, guesses, guesses remaining onto the html
     document.getElementById("winScore").textContent = "Wins: " + wins;
-    document.getElementById("lossScore").textContentL= "Losses: " + losses;
-    document.getElementById("guessRemain").textContent= "Guesses remaining: " + guessesRemain;
-    document.getElementById("guesses").textContent= guesses;
+    document.getElementById("lossScore").textContent= "Losses: " + losses;
+    document.getElementById("guessRemain").textContent= "Guesses Remaining: " + guessesRemain;
+    document.getElementById("guesses").textContent= "Your Guesses So Far: " + guesses;
 
 };
